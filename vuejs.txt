@@ -1,0 +1,25 @@
+1.
+const app = Vue.createApp({
+	template:"",
+	data(){
+		các thuộc tính object
+	},
+	methods:{
+		danh sách các hàm
+	}
+})
+app.mount(id or class để xác định đối tượng)
+
+2. gọi data: `{{}}`
+
+3. v-on = @
+
+4. v:if : hiện nếu ... là đúng
+
+5. @mouseover 
+
+6. @mouseleave 
+
+7. @dblclick 
+
+8. @mousemove 
