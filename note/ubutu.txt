@@ -1,3 +1,0 @@
-gnome-system-monitor : bật task manager 
-
-
