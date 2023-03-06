@@ -1,4 +1,14 @@
 <template >
+  <div class="select-limit">
+    <label>Choose a limit:</label>
+    <select name="cars" id="cars" v-model="limit">
+      <option value=10>10</option>
+      <option value=20>20</option>
+      <option value=30>30</option>
+      <option value=40>40</option>
+    </select>
+  </div>
+
   <div class="main" v-if="users.length != 0">
     <ul class="item" v-for="(user) in users" :key="user.id">
       <li>
@@ -9,14 +19,11 @@
       <img :src="user.image" alt="user image">
     </ul>
   </div>
-  <div class="footer">
+  <div class="footer" v-if="numberPage != 0">
     <nav>
-      <span>Trang: </span>
-      <router-link :to="{ name: 'alldata', params: { id_page: 1 } }">1</router-link> |
-      <router-link :to="{ name: 'alldata', params: { id_page: 2 } }">2</router-link> |
-      <router-link :to="{ name: 'alldata', params: { id_page: 3 } }">3</router-link> |
-      <router-link :to="{ name: 'alldata', params: { id_page: 4 } }">4</router-link>
-
+      <span v-for="id in 5" :key="id">Trang: </span>
+      <!-- <router-link :to="{ name: 'alldata', params: { id_page: id } }">{{ id }}</router-link> | -->
+      {{ id }}
     </nav>
 
   </div>
@@ -27,18 +34,24 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      users: []
+      users: [],
+      limit: 30,
+      numberPage: 0,
+      currentPage: 1,
+      total: 0
     }
   },
   beforeMount() {
+    this.currentPage = this.$route.params.id_page
     this.fetchUsers()
   },
   methods: {
     async fetchUsers() {
-      console.log('b');
       try {
-        const response = await axios.get(`https://dummyjson.com/users?skip=${(this.$route.params.id_page - 1) * 30}`);
+        const response = await axios.get(`https://dummyjson.com/users?skip=${(this.$route.params.id_page - 1) * this.limit}`);
         this.users = response.data.users;
+        this.total = response.data.total
+        this.numberPage = Math.round(this.total / this.limit) + 1
       } catch (error) {
         console.log(error);
       }
@@ -46,7 +59,11 @@ export default {
   },
   watch: {
     '$route.params.id_page'() {
+      this.currentPage = this.$route.params.id_page
       this.fetchUsers()
+    },
+    limit() {
+      this.numberPage = 5
     }
   }
 }
@@ -56,6 +73,12 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 30%;
+}
+
+.select-limit {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 40%;
 }
 
 .item {
