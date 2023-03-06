@@ -9,7 +9,8 @@ dist/
 npm-debug.log
 yarn-error.log
 first_project/
-second_project/
+second-project/
 third_project/
+nuxt-project/
 BE/
 # End of https://www.toptal.com/developers/gitignore/api/vuejs

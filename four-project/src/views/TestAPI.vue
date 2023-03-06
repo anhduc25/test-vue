@@ -1,9 +1,9 @@
 <template>
     <div>
         <nav>
-            <router-link to="/TestAPI/ShowData/-1">Get all data</router-link> |
-            <!-- <router-link to="/TestAPI/ShowData/-1">Get user with id</router-link> | -->
-
+            <router-link :to="{ name: 'alldata', params: { id_page: 1 } }">Get all data</router-link> |
+            <router-link :to="{ name: 'detaildata' }">Get user with id</router-link> |
+            <router-link :to="{ name: 'adddata' }">Add user</router-link> |
         </nav>
         <router-view />
 
@@ -14,6 +14,4 @@ export default {
     name: "TestAPI",
 }
 </script>
-<style lang="">
-    
-</style>
+<style lang="css"></style>

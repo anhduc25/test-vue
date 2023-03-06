@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeApp from '../views/HomeApp.vue'
 import TestAPI from '../views/TestAPI.vue';
-import ShowData from '../views/ShowData.vue';
+import AllData from '../views/AllData.vue';
+import DetailData from '../views/DetailData.vue';
+import AddData from '../views/AddData.vue';
 const routes = [
   {
     path: '/',
@@ -13,10 +15,19 @@ const routes = [
     component: TestAPI,
     children: [
       {
-        name: 'showdata',
-        path: '/TestAPI/ShowData/:id',
-        component: ShowData,
-        props: (route) => ({ id: parseInt(route.params.id) })
+        name: 'alldata',
+        path: '/TestAPI/AllData/page:id_page',
+        component: AllData,
+      },
+      {
+        name: 'detaildata',
+        path: '/TestAPI/DetailData/',
+        component: DetailData,
+      },
+      {
+        name: 'adddata',
+        path: '/TestAPI/AddData/',
+        component: AddData,
       },
     ]
   },
