@@ -27,7 +27,6 @@ export default {
             if (this.inputValue != "") {
                 try {
                     const response = await axios.get(`https://dummyjson.com/users/${this.inputValue}`);
-                    console.log(response);
                     this.user = response.data;
                     this.msg = null
                 } catch (error) {

@@ -21,9 +21,11 @@
   </div>
   <div class="footer" v-if="numberPage != 0">
     <nav>
-      <span v-for="id in 5" :key="id">Trang: </span>
-      <!-- <router-link :to="{ name: 'alldata', params: { id_page: id } }">{{ id }}</router-link> | -->
-      {{ id }}
+      <span>Trang: </span>
+      <span v-for="id in numberPage" :key="id">
+        <router-link :to="{ name: 'alldata', params: { id_page: id } }">{{ id }}</router-link>
+        <span v-if="id != numberPage"> | </span>
+      </span>
     </nav>
 
   </div>
@@ -48,23 +50,36 @@ export default {
   methods: {
     async fetchUsers() {
       try {
-        const response = await axios.get(`https://dummyjson.com/users?skip=${(this.$route.params.id_page - 1) * this.limit}`);
+        const skip = this.$route.params.id_page - 1
+        const response = await axios.get(`https://dummyjson.com/users?skip=${skip * this.limit}&limit=${this.limit}`);
         this.users = response.data.users;
         this.total = response.data.total
-        this.numberPage = Math.round(this.total / this.limit) + 1
+        this.numberPage = Math.floor((this.total - 1) / this.limit) + 1
       } catch (error) {
         console.log(error);
       }
     }
   },
   watch: {
-    '$route.params.id_page'() {
-      this.currentPage = this.$route.params.id_page
-      this.fetchUsers()
+    '$route.params.id_page'(a, b) {
+      if (a != undefined) {
+        console.log(a, b);
+        this.currentPage = this.$route.params.id_page
+        console.log(1);
+        this.fetchUsers()
+      }
     },
-    limit() {
-      this.numberPage = 5
-    }
+    limit(newValue, oldValue) {
+      console.log(newValue, oldValue);
+      var topID = oldValue * (this.currentPage - 1) + 1
+      var newCurrentPage = Math.floor(topID / newValue) + 1
+      if (newCurrentPage != this.currentPage) {
+        this.currentPage = newCurrentPage
+        this.$router.push({ name: 'alldata', params: { id_page: this.currentPage } })
+      } else {
+        this.fetchUsers()
+      }
+    },
   }
 }
 </script>
