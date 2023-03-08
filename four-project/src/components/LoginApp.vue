@@ -13,7 +13,7 @@
             </label>
         </div>
     </form>
-    <button @click="logIn">Log In</button>
+    <button class="button" @click="logIn">Log In</button>
 </template>
 <script>
 export default {
@@ -42,7 +42,7 @@ label {
     justify-content: space-between;
 }
 
-button {
+.button {
     margin-left: 40%;
     background-color: antiquewhite;
     font-size: 24px;

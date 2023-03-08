@@ -12,6 +12,7 @@
 #app {
   font-family: 'Shantell Sans', cursive;
   font-size: 24px;
+  margin-bottom: 60px;
 }
 
 nav {
