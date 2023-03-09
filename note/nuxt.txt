@@ -1,5 +1,9 @@
 1. npm init nuxt-app <project-name>
-   cd <project-name>
-   npm run dev
-
+   để làm vc:
+    cd project-name>
+    npm run dev
+   để buide:
+    npm run build
+    npm run start
+    
 2. 

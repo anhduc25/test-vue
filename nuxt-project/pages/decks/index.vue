@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>this is my deck</h1>
-  </div>
+  <h1>abc</h1>
 </template>
 <script>
 export default {

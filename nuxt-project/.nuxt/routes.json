@@ -1,17 +1,32 @@
 [
   {
-    "name": "inspire",
-    "path": "/inspire",
-    "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_a4cb3118"
-  },
-  {
-    "name": "MyDeck",
-    "path": "/MyDeck",
-    "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/MyDeck.vue",
-    "chunkName": "pages/MyDeck",
-    "_name": "_120c252a"
+    "path": "/decks",
+    "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/decks.vue",
+    "chunkName": "pages/decks",
+    "children": [
+      {
+        "name": "decks",
+        "path": "",
+        "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/decks/index.vue",
+        "chunkName": "pages/decks/index",
+        "_name": "_cb285cf2"
+      },
+      {
+        "name": "decks-a",
+        "path": "a",
+        "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/decks/a/index.vue",
+        "chunkName": "pages/decks/a/index",
+        "_name": "_9cc003ce"
+      },
+      {
+        "name": "decks-b",
+        "path": "b",
+        "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/decks/b/index.vue",
+        "chunkName": "pages/decks/b/index",
+        "_name": "_4684b0da"
+      }
+    ],
+    "_name": "_d2b643f8"
   },
   {
     "name": "index",

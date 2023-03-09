@@ -84,9 +84,7 @@ export default {
   watch: {
     '$route.params.id_page'(a, b) {
       if (a != undefined) {
-        console.log(a, b);
         this.currentPage = Number(this.$route.params.id_page)
-        console.log(1);
         this.fetchUsers()
       }
     },

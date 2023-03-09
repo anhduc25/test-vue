@@ -4,8 +4,10 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _a4cb3118 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _120c252a = () => interopDefault(import('../pages/MyDeck.vue' /* webpackChunkName: "pages/MyDeck" */))
+const _d2b643f8 = () => interopDefault(import('../pages/decks.vue' /* webpackChunkName: "pages/decks" */))
+const _cb285cf2 = () => interopDefault(import('../pages/decks/index.vue' /* webpackChunkName: "pages/decks/index" */))
+const _9cc003ce = () => interopDefault(import('../pages/decks/a/index.vue' /* webpackChunkName: "pages/decks/a/index" */))
+const _4684b0da = () => interopDefault(import('../pages/decks/b/index.vue' /* webpackChunkName: "pages/decks/b/index" */))
 const _4dd539ec = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -20,13 +22,21 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/inspire",
-    component: _a4cb3118,
-    name: "inspire"
-  }, {
-    path: "/MyDeck",
-    component: _120c252a,
-    name: "MyDeck"
+    path: "/decks",
+    component: _d2b643f8,
+    children: [{
+      path: "",
+      component: _cb285cf2,
+      name: "decks"
+    }, {
+      path: "a",
+      component: _9cc003ce,
+      name: "decks-a"
+    }, {
+      path: "b",
+      component: _4684b0da,
+      name: "decks-b"
+    }]
   }, {
     path: "/",
     component: _4dd539ec,
