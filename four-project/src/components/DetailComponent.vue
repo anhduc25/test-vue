@@ -21,11 +21,4 @@ export default {
 	margin: 5% 0;
 }
 
-.x2 {
-	margin-left: 10%;
-}
-
-.x3 {
-	margin-left: 20%;
-}
 </style>

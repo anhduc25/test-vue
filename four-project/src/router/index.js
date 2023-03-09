@@ -4,6 +4,7 @@ import TestAPI from '../views/TestAPI.vue';
 import AllData from '../views/AllData.vue';
 import DetailData from '../views/DetailData.vue';
 import AddData from '../views/AddData.vue';
+import DeleteData from '../views/DeleteData.vue';
 const routes = [
   {
     path: '/',
@@ -28,6 +29,10 @@ const routes = [
         name: 'adddata',
         path: '/TestAPI/AddData/',
         component: AddData,
+      }, {
+        name: 'deletedata',
+        path: '/TestAPI/DeleteData/',
+        component: DeleteData,
       },
     ]
   },
