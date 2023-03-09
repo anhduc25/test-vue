@@ -7,6 +7,13 @@
     "_name": "_a4cb3118"
   },
   {
+    "name": "MyDeck",
+    "path": "/MyDeck",
+    "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/MyDeck.vue",
+    "chunkName": "pages/MyDeck",
+    "_name": "_120c252a"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/index.vue",
