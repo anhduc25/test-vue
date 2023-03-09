@@ -1,5 +1,12 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_118ca72c"
+  },
+  {
     "path": "/decks",
     "component": "/home/duc181/Documents/test-vue/nuxt-project/pages/decks.vue",
     "chunkName": "pages/decks",
